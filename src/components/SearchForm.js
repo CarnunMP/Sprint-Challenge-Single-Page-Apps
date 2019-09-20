@@ -5,13 +5,8 @@ export default function SearchForm(props) {
   const {characters, attributeMatrix} = props;
   const [searchResults, setSearchResults] = useState([]);
 
-  console.log(characters)
-  console.log(attributeMatrix);
-
   const onSubmit = (formValues, actions) => {
     const searchInput = formValues.search;
-    
-
     // if (searchInput != "") {
     //   if (searchInput === "male" || searchInput === "Male") {
     //     setSearchResults(characters.filter(character => character.gender === "Male"))
@@ -21,8 +16,18 @@ export default function SearchForm(props) {
     //     setSearchResults(characters.filter(character => character.gender === "unknown"))
     //   }
     // }
+    
+    // I thought, _there must be a better way..._! So:
 
-    console.log(searchResults);
+    const resultsArray = [];
+    for (let attribute in attributeMatrix) {
+      if (searchInput.toLowerCase() === attribute.toLowerCase()) {
+        resultsArray.push(attributeMatrix[attribute]);
+      }
+    }
+
+    setSearchResults(resultsArray);
+    actions.resetForm();
   }
 
   return (
