@@ -11,6 +11,10 @@ export default function SearchForm(props) {
     if (searchInput != "") {
       if (searchInput === "male" || searchInput === "Male") {
         setSearchResults(characters.filter(character => character.gender === "Male"))
+      } else if (searchInput === "female" || searchInput === "Female") {
+        setSearchResults(characters.filter(character => character.gender === "Female"))
+      } else if (searchInput === "unknown" || searchInput === "Unknown") {
+        setSearchResults(characters.filter(character => character.gender === "unknown"))
       }
     }
 

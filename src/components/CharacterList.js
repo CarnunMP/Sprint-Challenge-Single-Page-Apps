@@ -12,6 +12,7 @@ export default function CharacterList() {
       //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
       axios.get("https://rickandmortyapi.com/api/character")
       .then(res => {
+        debugger
         setCharacters(res.data.results);
       })
       .catch(err => {
@@ -28,6 +29,7 @@ export default function CharacterList() {
             <div className="character" key={character.id}>
               <h2>Name: {character.name}</h2>
               <h3>Species: {character.species}</h3>
+              <h3>Gender: {character.gender}</h3>
               <h3>Status: {character.status}</h3>
             </div>
           ))
