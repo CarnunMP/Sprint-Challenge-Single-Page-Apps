@@ -4,7 +4,6 @@ import CharacterList from "./components/CharacterList.js";
 import {Route} from "react-router-dom";
 import WelcomePage from "./components/WelcomePage.js";
 
-
 export default function App() {
     return (
     <main>
