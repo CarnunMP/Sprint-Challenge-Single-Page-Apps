@@ -1,13 +1,27 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-export default function SearchForm() {
- 
+export default function SearchForm(props) {
+  const {characters} = props;
+  const [searchResults, setSearchResults] = useState([]);
+
+  const onSubmit = (formValues, actions) => {
+    const searchInput = formValues.search;
+    
+    if (searchInput != "") {
+      if (searchInput === "male" || searchInput === "Male") {
+        setSearchResults(characters.filter(character => character.gender === "Male"))
+      }
+    }
+
+    console.log(searchResults);
+  }
+
   return (
     <section className="search-form">
       <Formik 
         initialValues={{search: ""}}
-        onSubmit={(formValues, actions) => console.log(formValues.search)}
+        onSubmit={onSubmit}
         render={props => {
           return (
             <Form>
