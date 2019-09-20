@@ -2,21 +2,25 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 export default function SearchForm(props) {
-  const {characters} = props;
+  const {characters, attributeMatrix} = props;
   const [searchResults, setSearchResults] = useState([]);
+
+  console.log(characters)
+  console.log(attributeMatrix);
 
   const onSubmit = (formValues, actions) => {
     const searchInput = formValues.search;
     
-    if (searchInput != "") {
-      if (searchInput === "male" || searchInput === "Male") {
-        setSearchResults(characters.filter(character => character.gender === "Male"))
-      } else if (searchInput === "female" || searchInput === "Female") {
-        setSearchResults(characters.filter(character => character.gender === "Female"))
-      } else if (searchInput === "unknown" || searchInput === "Unknown") {
-        setSearchResults(characters.filter(character => character.gender === "unknown"))
-      }
-    }
+
+    // if (searchInput != "") {
+    //   if (searchInput === "male" || searchInput === "Male") {
+    //     setSearchResults(characters.filter(character => character.gender === "Male"))
+    //   } else if (searchInput === "female" || searchInput === "Female") {
+    //     setSearchResults(characters.filter(character => character.gender === "Female"))
+    //   } else if (searchInput === "unknown" || searchInput === "Unknown") {
+    //     setSearchResults(characters.filter(character => character.gender === "unknown"))
+    //   }
+    // }
 
     console.log(searchResults);
   }
