@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Header from "./components/Header.js";
 import axios from "axios";
+import CharacterList from "./components/CharacterList.js";
 
 
 export default function App() {
@@ -16,11 +17,10 @@ export default function App() {
       })
   }, [])
 
-  console.log(characters);
-
   return (
     <main>
       <Header />
+      <CharacterList characters={characters}/>
     </main>
   );
 }
