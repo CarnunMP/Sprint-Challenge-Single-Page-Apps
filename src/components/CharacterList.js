@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -18,16 +19,19 @@ export default function CharacterList() {
   }, [])
 
   return (
-    <section className="character-list">
-      {
-        characters.map(character => (
-          <div className="character" key={character.id}>
-            <h2>Name: {character.name}</h2>
-            <h3>Species: {character.species}</h3>
-            <h3>Status: {character.status}</h3>
-          </div>
-        ))
-      }
-    </section>
+    <>
+      <section className="character-list">
+        {
+          characters.map(character => (
+            <div className="character" key={character.id}>
+              <h2>Name: {character.name}</h2>
+              <h3>Species: {character.species}</h3>
+              <h3>Status: {character.status}</h3>
+            </div>
+          ))
+        }
+      </section>
+      <Link to="/">Home</Link>
+    </>
   );
 }
