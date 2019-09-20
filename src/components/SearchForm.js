@@ -27,7 +27,7 @@ export default function SearchForm(props) {
     }
 
     setSearchResults(resultsArray);
-    console.log(resultsArray);
+    console.log(resultsArray); // Console-logging just to show that it works! Didn't have time to implement fully, unfortunately.
     actions.resetForm();
   }
 

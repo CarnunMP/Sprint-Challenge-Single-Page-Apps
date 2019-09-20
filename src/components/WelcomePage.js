@@ -11,6 +11,7 @@ const StyledWelcomeSection = styled.section`
     justify-content: center;
   }
 `;
+// SearchForm took so long that I only got to styling at the very end. I know this is uber-minimal, but it _does_ satisfy the condition for MVP! :P
 
 export default function WelcomePage() {
   return (
